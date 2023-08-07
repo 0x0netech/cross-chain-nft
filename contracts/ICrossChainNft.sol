@@ -3,6 +3,11 @@ pragma solidity >0.7.0 <0.8.20;
 
 interface ICrossChainNft {
 
+    struct MappedChain {
+        uint8 _chainId;
+        string _address;
+    }
+
     /**
      * @dev Indicates attempt to mint 
      */
