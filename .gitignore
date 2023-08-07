@@ -141,3 +141,5 @@ typechain-types
 cache
 artifacts
 
+# Flattened Solidity files
+*_flat.sol

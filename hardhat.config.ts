@@ -3,13 +3,17 @@ import "@nomicfoundation/hardhat-toolbox";
 import { config as _config } from 'dotenv';
 _config();
 
+
 const SK = process.env.SK!;
-if (!SK) { throw new Error("SK is not populated in `env`!") };
+if (!SK) {
+  console.error("SK is not populated in `.env`!");
+  process.exit(1);
+};
 const accounts: string[] = [SK];
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.19",
+    version: "0.8.17",
     settings: {
       optimizer: {
         enabled: true,
