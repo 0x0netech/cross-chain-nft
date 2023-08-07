@@ -27,6 +27,9 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
     // Holds the next unique identifier
     uint256 private tokenId;
 
+    // Wrapped tokens baseUri
+    string public wrappedUri;
+
     // Hashmap storing the count of claimed NFTs
     mapping(address => uint8) public claimed;
 
@@ -50,7 +53,8 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
         address bridge_,
         uint256 lowerLimit_,
         uint256 upperLimit_,
-        string memory baseUri_
+        string memory baseUri_,
+        string memory wrappedUri_
     ) ERC721(name_, symbol_) {
         admin = _msgSender();
         bridge = bridge_;
@@ -58,6 +62,7 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
         nativeUpperLimit = upperLimit_;
         tokenId = lowerLimit_;
         baseUri = baseUri_;
+        wrappedUri = wrappedUri_;
     }
 
     /**
@@ -101,9 +106,12 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
         uint256 tokenId_
     ) public view override returns (string memory) {
         _requireMinted(tokenId_);
+        if (id >= nativeLowerLimit && id <= nativeUpperLimit){
+            return baseUri;
+        }
         return
-            bytes(baseUri).length > 0
-                ? string(abi.encodePacked(baseUri, tokenId_.toString()))
+            bytes(wrappedUri).length > 0
+                ? string(abi.encodePacked(wrappedUri, tokenId_.toString()))
                 : "";
     }
 
@@ -121,6 +129,10 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
 
     function fixUpperLimit(uint256 limit_) external onlyAdmin {
         nativeLowerLimit = limit_;
+    }
+
+    function fixWrappedUri(string memory wrappedUri_) external onlyAdmin {
+        wrappedUri = wrappedUri_;
     }
 
     function renounceAdmin() external onlyAdmin {
