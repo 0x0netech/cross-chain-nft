@@ -92,7 +92,7 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
             revert CrossChainNftReachedClaimLimit(_msgSender());
         }
 
-        if (tokenId + 1 > _nativeLowerLimit()) {
+        if (tokenId + 1 > _nativeUpperLimit()) {
             revert CrossChainNftReachedMintLimit();
         }
 
