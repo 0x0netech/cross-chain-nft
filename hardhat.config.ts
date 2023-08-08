@@ -1,14 +1,8 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import { config as _config } from 'dotenv';
-_config();
+import { readEnvOrThrow } from './scripts/utils';
 
-
-const SK = process.env.SK!;
-if (!SK) {
-  console.error("SK is not populated in `.env`!");
-  process.exit(1);
-};
+const SK = readEnvOrThrow("SK");
 const accounts: string[] = [SK];
 
 const config: HardhatUserConfig = {

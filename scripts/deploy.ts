@@ -1,26 +1,31 @@
 import { ethers } from "hardhat";
+import { readEnvOrThrow } from './utils';
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
 
-  const lockedAmount = ethers.parseEther("0.001");
+  const name: string = readEnvOrThrow("NAME");
+  const symbol: string = readEnvOrThrow("SYMBOL");
+  const bridge: string = readEnvOrThrow("BRIDGE");
+  const contractIndex: string = readEnvOrThrow("CONTRACT_INDEX");
+  const range: string = readEnvOrThrow("RANGE");
+  const baseUri: string = readEnvOrThrow("BASE_URI");
+  const wrappedUri: string = readEnvOrThrow("WRAPPED_URI");
 
-  const lock = await ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
+  const crossChainNft = await ethers.deployContract("CrossChainNft", [
+    name,
+    symbol,
+    bridge,
+    contractIndex,
+    range,
+    baseUri,
+    wrappedUri
+  ]);
 
-  await lock.waitForDeployment();
+  await crossChainNft.waitForDeployment();
 
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+  console.log(`Deployed to ${crossChainNft.target}`);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
