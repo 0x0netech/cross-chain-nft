@@ -22,30 +22,33 @@ Run in the terminal:
 npx hardhat flatten ./contracts/CrossChainNFT.sol > ./contracts/CrossChainNFT_flat.sol
 ```
 
-#### 2. Fix in the ERC721:
-
-From:
-```solidity
-    // Token name
-    string private _name;
-
-    // Token symbol
-    string private _symbol;
-```
-
-Fix to:
-
-```solidity
-    // Token name
-    string internal _name;
-
-    // Token symbol
-    string internal _symbol;
-```
-
-#### 3. Hide the split contracts
+#### 2. Hide the split contracts
 
 Delete or comment out the old contracts, especially `CrossChainNft.sol`.
+
+#### 3. Populate `.env`
+
+1. rename `.env.example` to `.env`
+
+```shell
+mv .env.example .env
+```
+
+2. Populate the variables to avoid errors during the compilation & deployment stages. If you already have the private key you only need to populate the SK= field. If this field is not populated, the `hardhat.config.ts` won't work correctly.
+
+```shell
+# Private Key of the deployer
+SK=
+# Deployer mnemonics Example="test test test"
+MNEMONICS=
+```
+
+3. If you only have mnemonics, populate the MNEMONICS= according to the example. Then run in the terminal:
+
+```shell
+ts-node ./scripts/mnem_to_sk.ts
+```
+As a result, you will get your private key and the address. Compare the address with the one you see in the wallet. If they match, you've correctly generated the private key to populate the SK= filed.
 
 #### 4. Compile
 

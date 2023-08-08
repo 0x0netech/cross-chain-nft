@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >0.7.0 <0.8.20;
+pragma solidity >0.7.0 <0.8.21;
 
 import "./IBridgeNFT.sol";
 import "./ICrossChainNft.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
+import "./openzeppelin/ERC721.sol";
+import "./openzeppelin/utils/Strings.sol";
 
 contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
     using Strings for uint256;
@@ -208,6 +208,10 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
         }
         _safeMint(to, id, mintArgs);
     }
+
+    /********************************************************
+     *            P R I V A T E   F U N C T I O N S         *
+     *******************************************************/
 
     function _nativeLowerLimit() private view returns (uint256) {
         return contractIndex * range;

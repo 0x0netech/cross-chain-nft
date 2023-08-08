@@ -4,5 +4,6 @@ config();
 
 let mnemonic = process.env.MNEMONICS!;
 let mnemonicWallet = ethers.Wallet.fromPhrase(mnemonic);
-console.log(mnemonicWallet.privateKey);
-console.log(mnemonicWallet.address);
+
+console.log("Private Key:", mnemonicWallet.privateKey);
+console.log("Address:", mnemonicWallet.address);
