@@ -21,9 +21,11 @@ async function main() {
     wrappedUri
   ]);
 
-  await crossChainNft.waitForDeployment();
+  const result = await crossChainNft.waitForDeployment();
 
-  console.log(`Deployed to ${crossChainNft.target}`);
+  await result.waitForDeployment()
+
+  console.log(`Deployed to ${crossChainNft.target}, at: ${result.deploymentTransaction()?.hash}`);
 }
 
 main().catch((error) => {

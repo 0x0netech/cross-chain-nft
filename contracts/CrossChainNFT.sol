@@ -8,6 +8,7 @@ import "./openzeppelin/utils/Strings.sol";
 
 contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
     using Strings for uint256;
+    using Strings for uint8;
 
     // The admin of the contract
     address private admin;
@@ -130,7 +131,7 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
                 ? string(
                     abi.encodePacked(
                         wrappedUri,
-                        contractMap[index_]._chainId,
+                        contractMap[index_]._chainId.toString(),
                         "/",
                         contractMap[index_]._address,
                         "/",
