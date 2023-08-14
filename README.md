@@ -108,3 +108,7 @@ npx hardhat run --network <your-network> scripts/deploy.ts
 2. Moonbeam: [0xf777be29f4691D025C14afeeF9B05352CC94C59c](https://moonscan.io/address/0xf777be29f4691d025c14afeef9b05352cc94c59c#code)
 3. NEAR:
 4. Polygon: [0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054](https://polygonscan.com/address/0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054#code)
+
+Metadata: [QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g](https://ipfs.io/ipfs/QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g/)
+
+Images: [QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK](https://ipfs.io/ipfs/QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK/)
