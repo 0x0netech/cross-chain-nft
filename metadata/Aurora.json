@@ -1,0 +1,19 @@
+{
+    "image": "https://ipfs.io/ipfs/QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK/Aurora.gif",
+    "name": "XP Crossroads - Aurora",
+    "description": "Aurora and XP.NETWORK joint campaign on Galxe.com",
+    "attributes": [
+        {
+            "trait_type": "Contract Index",
+            "value": 0
+        },
+        {
+            "trait_type": "Smallest token ID",
+            "value": 1
+        },
+        {
+            "trait_type": "Biggest token ID",
+            "value": 1000000
+        }
+    ]
+}
