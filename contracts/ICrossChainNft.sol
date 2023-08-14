@@ -2,14 +2,8 @@
 pragma solidity >0.7.0 <0.8.21;
 
 interface ICrossChainNft {
-
-    struct MappedChain {
-        uint8 _chainId;
-        string _address;
-    }
-
     /**
-     * @dev Indicates attempt to mint 
+     * @dev Indicates attempt to mint
      */
     error CrossChainNftWrappedIdOverlapsWithNative(uint256 id);
 
@@ -39,13 +33,13 @@ interface ICrossChainNft {
 
     /**
      * @dev Mints an NFT to the sender
-     * 
+     *
      * Requirements:
-     * 
+     *
      * - The sender must have less than 5 claimed NFTs
      * - The contract must have less than 1M minted NFTs
      * - The sender must be an EOA and not a contract
-     * 
+     *
      * Emits a {Claim} event.
      */
     function claim() external;

@@ -6,9 +6,8 @@ import "./ICrossChainNft.sol";
 import "./openzeppelin/ERC721.sol";
 import "./openzeppelin/utils/Strings.sol";
 
-contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
+contract XPCrossRoads is ERC721, IBridgeNFT, ICrossChainNft {
     using Strings for uint256;
-    using Strings for uint8;
 
     // The admin of the contract
     address private admin;
@@ -33,9 +32,6 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
 
     // Hashmap storing the count of claimed NFTs
     mapping(address => uint8) public claimed;
-
-    // The lowerBounds => contract address
-    mapping(uint256 => MappedChain) private contractMap;
 
     modifier onlyAdmin() {
         if (_msgSender() != admin) {
@@ -82,7 +78,7 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
     }
 
     function baseURI() external view returns (string memory) {
-        return baseUri;
+        return string(abi.encodePacked(wrappedUri, "{id}"));
     }
 
     function claim() external {
@@ -120,21 +116,15 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
         uint256 tokenId_
     ) public view override returns (string memory) {
         _requireMinted(tokenId_);
-        if (
-            tokenId_ >= _nativeLowerLimit() && tokenId_ <= _nativeUpperLimit()
-        ) {
+        uint256 index_ = tokenId_ / range;
+        if (index_ == contractIndex) {
             return baseUri;
         }
-        uint256 index_ = tokenId_ / range;
         return
             bytes(wrappedUri).length > 0
                 ? string(
                     abi.encodePacked(
                         wrappedUri,
-                        contractMap[index_]._chainId.toString(),
-                        "/",
-                        contractMap[index_]._address,
-                        "/",
                         tokenId_.toString()
                     )
                 )
@@ -159,14 +149,6 @@ contract CrossChainNft is ERC721, IBridgeNFT, ICrossChainNft {
 
     function fixWrappedUri(string memory wrappedUri_) external onlyAdmin {
         wrappedUri = wrappedUri_;
-    }
-
-    function mapNewContract(
-        uint256 index_,
-        string memory address_,
-        uint8 chainId_
-    ) external onlyAdmin {
-        contractMap[index_] = MappedChain(chainId_, address_);
     }
 
     function renounceAdmin() external onlyAdmin {
