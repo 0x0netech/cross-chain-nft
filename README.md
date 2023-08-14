@@ -103,7 +103,7 @@ npx hardhat run --network <your-network> scripts/deploy.ts
 
 ## Aurora Joint campaign on Galxe.com
 
-0. Aurora:
+0. Aurora: [0xb7f9a9d17388482d0206C12D32fDeE5231290913](https://explorer.aurora.dev/address/0xb7f9a9d17388482d0206C12D32fDeE5231290913/contracts#address-tabs)
 1. BSC: [0xf777be29f4691D025C14afeeF9B05352CC94C59c](https://bscscan.com/address/0xf777be29f4691d025c14afeef9b05352cc94c59c#code)
 2. Moonbeam: [0xf777be29f4691D025C14afeeF9B05352CC94C59c](https://moonscan.io/address/0xf777be29f4691d025c14afeef9b05352cc94c59c#code)
 3. NEAR:
