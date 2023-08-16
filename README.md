@@ -74,7 +74,8 @@ SYMBOL=
 # 0. aurora:                                                   0x32E8854DC2a5Fd7049DCF10ef2cb5f01300c7B47
 # 1. bsc:     0x7Eac6825A851d79ae24301eA497AD8db2a0F4976       0x0B7ED039DFF2b91Eb4746830EaDAE6A0436fC4CB
 # 2. moonbeam:0xce50496C6616F4688d5775966E302A49e3876Dff       0xBA3Cc81cfc54a4ce99638b5da1F17b15476E7231
-# 3. polygon: 0xF712f9De44425d8845A1d597a247Fe88F4A23b6f       0x14CAB7829B03D075c4ae1aCF4f9156235ce99405
+# 3. NEAR:
+# 4. polygon: 0xF712f9De44425d8845A1d597a247Fe88F4A23b6f       0x14CAB7829B03D075c4ae1aCF4f9156235ce99405
 BRIDGE=
 # The index of the contract in the system {0, 1, 2, 3}
 CONTRACT_INDEX=
@@ -99,3 +100,15 @@ And run the command in the terminal:
 ```shell
 npx hardhat run --network <your-network> scripts/deploy.ts
 ```
+
+## Aurora Joint campaign on Galxe.com
+
+0. Aurora: [0xb7f9a9d17388482d0206C12D32fDeE5231290913](https://explorer.aurora.dev/address/0xb7f9a9d17388482d0206C12D32fDeE5231290913/contracts#address-tabs)
+1. BSC: [0xf777be29f4691D025C14afeeF9B05352CC94C59c](https://bscscan.com/address/0xf777be29f4691d025c14afeef9b05352cc94c59c#code)
+2. Moonbeam: [0xf777be29f4691D025C14afeeF9B05352CC94C59c](https://moonscan.io/address/0xf777be29f4691d025c14afeef9b05352cc94c59c#code)
+3. NEAR:
+4. Polygon: [0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054](https://polygonscan.com/address/0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054#code)
+
+Metadata: [QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g](https://ipfs.io/ipfs/QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g/)
+
+Images: [QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK](https://ipfs.io/ipfs/QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK/)

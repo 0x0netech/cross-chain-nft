@@ -1,0 +1,19 @@
+{
+    "image": "https://ipfs.io/ipfs/QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK/Polygon.gif",
+    "name": "XP Crossroads - Polygon",
+    "description": "Aurora and XP.NETWORK joint campaign on Galxe.com",
+    "attributes": [
+        {
+            "trait_type": "Contract Index",
+            "value": 4
+        },
+        {
+            "trait_type": "Smallest token ID",
+            "value": 4000001
+        },
+        {
+            "trait_type": "Biggest token ID",
+            "value": 5000000
+        }
+    ]
+}

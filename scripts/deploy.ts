@@ -11,7 +11,7 @@ async function main() {
   const baseUri: string = readEnvOrThrow("BASE_URI");
   const wrappedUri: string = readEnvOrThrow("WRAPPED_URI");
 
-  const crossChainNft = await ethers.deployContract("CrossChainNft", [
+  const crossChainNft = await ethers.deployContract("XPCrossRoads", [
     name,
     symbol,
     bridge,
