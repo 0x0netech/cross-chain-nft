@@ -109,6 +109,6 @@ npx hardhat run --network <your-network> scripts/deploy.ts
 3. NEAR:
 4. Polygon: [0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054](https://polygonscan.com/address/0xce715Ab3E0A40Bd718e6C4c9cd9c41D874494054#code)
 
-Metadata: [QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g](https://ipfs.io/ipfs/QmPhpcpnNoGETHUsgxVYwwyR1pDbjegWdQF9uPe4izCx5g/)
+Metadata: [QmS46mfSfYYfB9TgW2AnCB9ZuxicKix9BxVPaatajwjUWc](https://ipfs.io/ipfs/QmS46mfSfYYfB9TgW2AnCB9ZuxicKix9BxVPaatajwjUWc/)
 
-Images: [QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK](https://ipfs.io/ipfs/QmVA4GGXj3bE9bLoXuA86K9d7UDTwFVCQDwPknrJGNA8nK/)
+Images: [QmZjTpC4NB1fKNa6aRE7ruTbBvw3YmYjT3nkTzsJWnnDuw](https://ipfs.io/ipfs/QmZjTpC4NB1fKNa6aRE7ruTbBvw3YmYjT3nkTzsJWnnDuw/)
